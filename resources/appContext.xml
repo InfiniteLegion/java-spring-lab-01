@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--    <bean id="user1"-->
+<!--          class="org.example.User">-->
+<!--        <constructor-arg index="0" value="Anakin"/>-->
+<!--        <constructor-arg index="1" value="Skywalker"/>-->
+<!--        <constructor-arg index="2" ref="address"/>-->
+<!--    </bean>-->
+<!--    <bean id="user2"-->
+<!--          class="org.example.User">-->
+<!--        <property name="firstName" value="Obi-Wan"/>-->
+<!--        <property name="lastName" value="Kenobi"/>-->
+<!--        <property name="address" ref="address"/>-->
+<!--    </bean>-->
+
+    <bean id="japan"
+        class="org.example.Country">
+        <constructor-arg index="0" value="Japan"/>
+        <constructor-arg index="1" value="1257000"/>
+    </bean>
+    <bean id="italy"
+        class="org.example.Country">
+        <property name="name" value="Italy"/>
+        <property name="population" value="59110000"/>
+    </bean>
+
+    <bean id="nissan"
+        class="org.example.Brand">
+        <constructor-arg index="0" value="Nissan"/>
+        <constructor-arg index="1" ref="japan"/>
+    </bean>
+    <bean id="ferrari"
+        class="org.example.Brand">
+        <property name="name" value="Ferrari"/>
+        <property name="country" ref="italy"/>
+    </bean>
+
+    <bean id="juke"
+        class="org.example.Car">
+        <constructor-arg index="0" ref="nissan"/>
+        <constructor-arg index="1" value="Juke"/>
+        <constructor-arg index="2" value="Black"/>
+    </bean>
+    <bean id="f50"
+        class="org.example.Car">
+        <property name="brand" ref="ferrari"/>
+        <property name="model" value="F50"/>
+        <property name="color" value="Red"/>
+    </bean>
+
+    <bean id="user1"
+        class="org.example.User">
+        <constructor-arg index="0" value="Ivan"/>
+        <constructor-arg index="1" value="Ivanenko"/>
+        <constructor-arg index="2" ref="juke"/>
+    </bean>
+    <bean id="user2"
+          class="org.example.User">
+        <property name="firstName" value="Anton"/>
+        <property name="lastName" value="Petrenko"/>
+        <property name="car" ref="f50"/>
+    </bean>
+
+</beans>
