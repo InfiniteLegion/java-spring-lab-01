@@ -7,19 +7,6 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-<!--    <bean id="user1"-->
-<!--          class="org.example.User">-->
-<!--        <constructor-arg index="0" value="Anakin"/>-->
-<!--        <constructor-arg index="1" value="Skywalker"/>-->
-<!--        <constructor-arg index="2" ref="address"/>-->
-<!--    </bean>-->
-<!--    <bean id="user2"-->
-<!--          class="org.example.User">-->
-<!--        <property name="firstName" value="Obi-Wan"/>-->
-<!--        <property name="lastName" value="Kenobi"/>-->
-<!--        <property name="address" ref="address"/>-->
-<!--    </bean>-->
-
     <bean id="japan"
         class="org.example.Country">
         <constructor-arg index="0" value="Japan"/>
